@@ -1,0 +1,43 @@
+<html>
+<form id="myForm">
+    <label for="company_name">Company Name:</label>
+    <input type="text" id="company_name" name="company_name"><br><br>
+    <label for="person_name">Tenant Name:</label>
+    <input type="text" id="person_name" name="person_name"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="building">Building:</label>
+    <input type="text" id="building" name="building"><br><br>
+    <label for="unit">Unit:</label>
+    <input type="text" id="unit" name="unit"><br><br>
+    <label for="rent">Rent:</label>
+    <input type="number" id="rent" name="rent"><br><br>
+    <!-- This is a number because it is the day of the month-->
+    <label for="due_day">Due Day of Month:</label>
+    <input type="number" id="due_day" name="due_day"><br><br>
+    <label for="pays_utilities">Pays Utilities:</label>
+    <input type="checkbox" id="pays_utilities" name="pays_utilities"><br><br>
+    <label for="portion_electric">Portion of Electric:</label>
+    <input type="number" id="portion_electric" name="portion_electric"><br><br>
+    <label for="portion_gas">Portion of Gas:</label>
+    <input type="number" id="portion_gas" name="portion_gas"><br><br>
+    <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<script>
+    function submitForm() {
+        // Get the form data
+        const formData = new FormData(document.getElementById('myForm'));
+
+        // Convert the form data into a JSON object
+        const jsonObject = {};
+        for (const [key, value] of formData.entries()) {
+            jsonObject[key] = value;
+        }
+
+        // Log the JSON object to the console
+        console.log(jsonObject);
+    }
+</script>
+
+</html>
