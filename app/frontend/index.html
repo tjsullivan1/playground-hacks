@@ -17,6 +17,7 @@
     <input type="number" id="due_day" name="due_day"><br><br>
     <label for="pays_utilities">Pays Utilities:</label>
     <input type="checkbox" id="pays_utilities" name="pays_utilities"><br><br>
+    <!-- TODO: It would be nice if these only showed if the checkbox is checked.-->
     <label for="portion_electric">Portion of Electric:</label>
     <input type="number" id="portion_electric" name="portion_electric"><br><br>
     <label for="portion_gas">Portion of Gas:</label>
@@ -37,6 +38,25 @@
 
         // Log the JSON object to the console
         console.log(jsonObject);
+
+        // Post JSON Object to the server
+        fetch('http://localhost:8000/tenants', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'no-cors',
+            body: JSON.stringify(jsonObject),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert("Tenant Added Successfully");
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert("Error Adding Tenant");
+            });
     }
 </script>
 

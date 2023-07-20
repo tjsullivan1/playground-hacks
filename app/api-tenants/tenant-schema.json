@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "company_name": {
+        "type": "string"
+      },
+      "person_name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string",
+        "format": "email"
+      },
+      "building": {
+        "type": "string"
+      },
+      "unit": {
+        "type": "string"
+      },
+      "rent": {
+        "type": "number"
+      },
+      "due_day": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 31
+      },
+      "pays_utilities": {
+        "type": "boolean"
+      },
+      "portion_electric": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "portion_gas": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "required": [
+      "company_name",
+      "person_name",
+      "email",
+      "building",
+      "rent",
+      "due_day",
+      "pays_utilities"
+    ]
+  }
